@@ -10,7 +10,7 @@ public class EcoTickPlugin extends xJavaPlugin {
 	public static final Logger log = Logger.getLogger("Minecraft");
 	public static final String LOG_PREFIX  = "[EcoTick] ";
 	protected static final int SPIGOT_PLUGIN_ID = 0;
-	protected static final int BSTATS_PLUGIN_ID = 0;
+	protected static final int BSTATS_PLUGIN_ID = 17533;
 
 	protected static final AtomicReference<EcoTickPlugin> instance = new AtomicReference<EcoTickPlugin>(null);
 
