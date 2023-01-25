@@ -1,0 +1,6 @@
+EcoTick - Reduce CPU usage when no players are online
+
+
+2023-01-25 - 0.1.1
+==================
+* initial release
