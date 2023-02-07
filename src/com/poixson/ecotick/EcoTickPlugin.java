@@ -50,4 +50,19 @@ public class EcoTickPlugin extends xJavaPlugin {
 
 
 
+	// -------------------------------------------------------------------------------
+
+
+
+	@Override
+	protected int getSpigotPluginID() {
+		return SPIGOT_PLUGIN_ID;
+	}
+	@Override
+	protected int getBStatsID() {
+		return BSTATS_PLUGIN_ID;
+	}
+
+
+
 }
