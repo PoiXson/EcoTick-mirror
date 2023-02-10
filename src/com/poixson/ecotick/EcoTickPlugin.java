@@ -3,6 +3,8 @@ package com.poixson.ecotick;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 
+import org.bukkit.configuration.file.FileConfiguration;
+
 import com.poixson.commonmc.tools.plugin.xJavaPlugin;
 
 
@@ -46,6 +48,34 @@ public class EcoTickPlugin extends xJavaPlugin {
 			if (task != null)
 				task.stop();
 		}
+	}
+
+
+
+	// -------------------------------------------------------------------------------
+	// configs
+
+
+
+	@Override
+	protected void loadConfigs() {
+		this.mkPluginDir();
+		// config.yml
+		{
+			final FileConfiguration cfg = this.getConfig();
+			this.config.set(cfg);
+			this.configDefaults(cfg);
+			cfg.options().copyDefaults(true);
+			super.saveConfig();
+		}
+	}
+	@Override
+	protected void saveConfigs() {
+		// config.yml
+		super.saveConfig();
+	}
+	@Override
+	protected void configDefaults(final FileConfiguration cfg) {
 	}
 
 
