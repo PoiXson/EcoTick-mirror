@@ -19,11 +19,13 @@ public class LaggerTask extends BukkitRunnable {
 	protected final EcoTickPlugin plugin;
 
 	protected AtomicLong state = new AtomicLong(0L);
+	protected final long delay;
 
 
 
-	public LaggerTask(final EcoTickPlugin plugin) {
+	public LaggerTask(final EcoTickPlugin plugin, final long delay) {
 		this.plugin = plugin;
+		this.delay  = delay;
 	}
 
 
@@ -43,14 +45,18 @@ public class LaggerTask extends BukkitRunnable {
 	public void run() {
 		if (Bukkit.getOnlinePlayers().size() == 0) {
 			final long state = this.state.getAndIncrement();
-			if (state == 0L)
+			if (state == this.delay) {
 				log.info(LOG_PREFIX + "Slowing the server..");
-			if (state % 300L == 0)
 				UnloadChunks();
-			ThreadUtils.Sleep(1000L);
+			} else
+			if (state > this.delay) {
+				// once every 5 minutes
+				if (state % 300L == 0)
+					UnloadChunks();
+				ThreadUtils.Sleep(1000L);
+			}
 		} else {
-			final long state = this.state.getAndSet(0L);
-			if (state != 0L)
+			if (this.state.getAndSet(0L) != 0L)
 				log.info(LOG_PREFIX + "Resuming normal ticks..");
 		}
 	}

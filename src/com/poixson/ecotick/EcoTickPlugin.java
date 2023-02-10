@@ -14,6 +14,8 @@ public class EcoTickPlugin extends xJavaPlugin {
 	protected static final int SPIGOT_PLUGIN_ID = 0;
 	protected static final int BSTATS_PLUGIN_ID = 17533;
 
+	protected static final long DEFAULT_LAG_DELAY = 30L;
+
 	protected static final AtomicReference<EcoTickPlugin> instance = new AtomicReference<EcoTickPlugin>(null);
 
 	protected final AtomicReference<LaggerTask> lagger = new AtomicReference<LaggerTask>(null);
@@ -31,7 +33,8 @@ public class EcoTickPlugin extends xJavaPlugin {
 		super.onEnable();
 		// lagger task
 		{
-			final LaggerTask task = new LaggerTask(this);
+			final long delay = this.getLagDelay();
+			final LaggerTask task = new LaggerTask(this, delay);
 			final LaggerTask previous = this.lagger.getAndSet(task);
 			if (previous != null)
 				previous.stop();
@@ -76,6 +79,13 @@ public class EcoTickPlugin extends xJavaPlugin {
 	}
 	@Override
 	protected void configDefaults(final FileConfiguration cfg) {
+		cfg.addDefault("Lag Delay Seconds", Long.valueOf(DEFAULT_LAG_DELAY));
+	}
+
+
+
+	public long getLagDelay() {
+		return this.config.get().getLong("Lag Delay Seconds");
 	}
 
 
