@@ -1,6 +1,11 @@
 EcoTick - Reduce CPU usage when no players are online
 
 
+2023-02-10 - 0.1.2
+==================
+* added config.yml with delay seconds
+
+
 2023-01-25 - 0.1.1
 ==================
 * initial release
