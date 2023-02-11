@@ -1,6 +1,5 @@
 package com.poixson.ecotick;
 
-import java.util.Collection;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
@@ -67,10 +66,9 @@ public class LaggerTask extends BukkitRunnable {
 		final long mem = Runtime.getRuntime().freeMemory();
 		int count = 0;
 		for (final World world : Bukkit.getWorlds()) {
-			final Collection<Chunk> forced = world.getForceLoadedChunks();
 			final Chunk[] chunks = world.getLoadedChunks();
 			for (final Chunk chunk : chunks) {
-				if (forced.contains(chunk))
+				if (chunk.isForceLoaded())
 					continue;
 				if (chunk.unload(true))
 					count++;
