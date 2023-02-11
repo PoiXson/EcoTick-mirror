@@ -1,3 +1,5 @@
+EcoTick - Reduce CPU usage when no players are online
+
 This plugin intentionally lags your server when there are no players online. This reduces needless CPU load and lowers power consumption. Similar to the hibernate plugin, but possibly better, and open source.
 
 When the last player disconnects from the server, there is a 30 second delay, then the plugin will slow the server by sleeping the main thread, and allow no more than 1 tps. It will also unload chunks and free memory every 5 minutes.
