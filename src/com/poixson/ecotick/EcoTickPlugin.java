@@ -11,14 +11,15 @@ import com.poixson.commonmc.tools.plugin.xJavaPlugin;
 public class EcoTickPlugin extends xJavaPlugin {
 	public static final Logger log = Logger.getLogger("Minecraft");
 	public static final String LOG_PREFIX  = "[EcoTick] ";
-	protected static final int SPIGOT_PLUGIN_ID = 107938;
-	protected static final int BSTATS_PLUGIN_ID = 17533;
 
 	protected static final long DEFAULT_LAG_DELAY = 30L;
 
 	protected static final AtomicReference<EcoTickPlugin> instance = new AtomicReference<EcoTickPlugin>(null);
 
 	protected final AtomicReference<LaggerTask> lagger = new AtomicReference<LaggerTask>(null);
+
+	@Override public int getSpigotPluginID() { return 107938; }
+	@Override public int getBStatsID() {       return 17533;  }
 
 
 
@@ -86,21 +87,6 @@ public class EcoTickPlugin extends xJavaPlugin {
 
 	public long getLagDelay() {
 		return this.config.get().getLong("Lag Delay Seconds");
-	}
-
-
-
-	// -------------------------------------------------------------------------------
-
-
-
-	@Override
-	protected int getSpigotPluginID() {
-		return SPIGOT_PLUGIN_ID;
-	}
-	@Override
-	protected int getBStatsID() {
-		return BSTATS_PLUGIN_ID;
 	}
 
 
