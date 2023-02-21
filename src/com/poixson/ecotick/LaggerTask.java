@@ -1,7 +1,9 @@
 package com.poixson.ecotick;
 
+import static com.poixson.commonmc.tools.plugin.xJavaPlugin.LOG;
+import static com.poixson.ecotick.EcoTickPlugin.LOG_PREFIX;
+
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
@@ -12,8 +14,6 @@ import com.poixson.utils.ThreadUtils;
 
 
 public class LaggerTask extends BukkitRunnable {
-	protected static final Logger log = EcoTickPlugin.log;
-	protected static final String LOG_PREFIX = EcoTickPlugin.LOG_PREFIX;
 
 	protected final EcoTickPlugin plugin;
 
@@ -45,7 +45,7 @@ public class LaggerTask extends BukkitRunnable {
 		if (Bukkit.getOnlinePlayers().size() == 0) {
 			final long state = this.state.getAndIncrement();
 			if (state == this.delay) {
-				log.info(LOG_PREFIX + "Slowing the server..");
+				LOG.info(LOG_PREFIX + "Slowing the server..");
 				UnloadChunks();
 			} else
 			if (state > this.delay) {
@@ -56,7 +56,7 @@ public class LaggerTask extends BukkitRunnable {
 			}
 		} else {
 			if (this.state.getAndSet(0L) != 0L)
-				log.info(LOG_PREFIX + "Resuming normal ticks..");
+				LOG.info(LOG_PREFIX + "Resuming normal ticks..");
 		}
 	}
 
@@ -76,10 +76,10 @@ public class LaggerTask extends BukkitRunnable {
 		}
 		System.gc();
 		if (count > 0)
-			log.info(String.format("%sUnloaded %d chunks", LOG_PREFIX, Integer.valueOf(count)));
+			LOG.info(String.format("%sUnloaded %d chunks", LOG_PREFIX, Integer.valueOf(count)));
 		final long freed = mem - Runtime.getRuntime().freeMemory();
 		if (freed > 10485760L) // 10MB
-			log.info(String.format("%sFreed memory: %dMB", LOG_PREFIX, Long.valueOf(freed/1024/1024)));
+			LOG.info(String.format("%sFreed memory: %dMB", LOG_PREFIX, Long.valueOf(freed/1024/1024)));
 	}
 
 
