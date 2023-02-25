@@ -12,8 +12,6 @@ public class EcoTickPlugin extends xJavaPlugin {
 
 	protected static final long DEFAULT_LAG_DELAY = 30L;
 
-	protected static final AtomicReference<EcoTickPlugin> instance = new AtomicReference<EcoTickPlugin>(null);
-
 	protected final AtomicReference<LaggerTask> lagger = new AtomicReference<LaggerTask>(null);
 
 	@Override public int getSpigotPluginID() { return 107938; }
