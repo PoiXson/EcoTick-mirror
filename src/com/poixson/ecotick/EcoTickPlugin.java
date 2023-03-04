@@ -8,14 +8,13 @@ import com.poixson.commonmc.tools.plugin.xJavaPlugin;
 
 
 public class EcoTickPlugin extends xJavaPlugin {
+	@Override public int getSpigotPluginID() { return 107938; }
+	@Override public int getBStatsID() {       return 17533;  }
 	public static final String LOG_PREFIX  = "[EcoTick] ";
 
 	protected static final long DEFAULT_LAG_DELAY = 30L;
 
 	protected final AtomicReference<LaggerTask> lagger = new AtomicReference<LaggerTask>(null);
-
-	@Override public int getSpigotPluginID() { return 107938; }
-	@Override public int getBStatsID() {       return 17533;  }
 
 
 
