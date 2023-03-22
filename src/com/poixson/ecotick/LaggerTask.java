@@ -30,7 +30,7 @@ public class LaggerTask extends BukkitRunnable {
 
 
 	public void start() {
-		this.runTaskTimer(this.plugin, 200L, 20L);
+		this.runTaskTimer(this.plugin, 200L, 19L);
 	}
 	public void stop() {
 		try {
