@@ -1,6 +1,6 @@
 package com.poixson.ecotick;
 
-import static com.poixson.commonmc.tools.plugin.xJavaPlugin.LOG;
+import static com.poixson.pluginlib.tools.plugin.xJavaPlugin.LOG;
 import static com.poixson.ecotick.EcoTickPlugin.LOG_PREFIX;
 
 import java.util.concurrent.atomic.AtomicLong;

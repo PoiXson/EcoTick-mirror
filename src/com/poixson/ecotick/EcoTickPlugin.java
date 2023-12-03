@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.poixson.commonmc.tools.plugin.xJavaPlugin;
+import com.poixson.pluginlib.tools.plugin.xJavaPlugin;
 
 
 public class EcoTickPlugin extends xJavaPlugin {
