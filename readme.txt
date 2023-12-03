@@ -6,9 +6,9 @@ When the last player disconnects from the server, there is a 30 second delay, th
 
 If your server console is spammed with lag warnings, this can be disabled in the bukkit.yml file, change warn-on-overload to false.
 
-Requires pxnCommonMC plugin:
-https://dev.bukkit.org/projects/pxncommonpluginmc
-or https://www.spigotmc.org/resources/pxncommonpluginmc.107049/
+Requires pxnPluginLib plugin:
+https://dev.bukkit.org/projects/pxnpluginlib
+or https://www.spigotmc.org/resources/pxnpluginlib.107049/
 
 Discord: https://discord.gg/jHgP2a3kDx
 
