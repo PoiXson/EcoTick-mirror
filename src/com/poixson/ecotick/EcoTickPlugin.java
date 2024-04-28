@@ -58,7 +58,7 @@ public class EcoTickPlugin extends xJavaPlugin {
 
 	@Override
 	protected void loadConfigs() {
-		this.mkPluginDir();
+		super.loadConfigs();
 		// config.yml
 		{
 			final FileConfiguration cfg = this.getConfig();
@@ -69,11 +69,11 @@ public class EcoTickPlugin extends xJavaPlugin {
 	}
 	@Override
 	protected void saveConfigs() {
-		// config.yml
 		super.saveConfig();
 	}
 	@Override
 	protected void configDefaults(final FileConfiguration cfg) {
+		super.configDefaults(cfg);
 		cfg.addDefault("Lag Delay Seconds", Long.valueOf(DEFAULT_LAG_DELAY));
 	}
 
