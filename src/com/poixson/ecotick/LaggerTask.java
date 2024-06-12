@@ -1,6 +1,7 @@
 package com.poixson.ecotick;
 
 import static com.poixson.utils.BukkitUtils.GarbageCollect;
+import static com.poixson.utils.BukkitUtils.SafeCancel;
 
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
@@ -31,9 +32,7 @@ public class LaggerTask extends BukkitRunnable {
 		this.runTaskTimer(this.plugin, 200L, 19L);
 	}
 	public void stop() {
-		try {
-			this.cancel();
-		} catch (IllegalStateException ignore) {}
+		SafeCancel(this);
 	}
 
 
