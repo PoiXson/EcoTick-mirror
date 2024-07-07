@@ -60,7 +60,7 @@ public class LaggerTask extends BukkitRunnable {
 
 
 	public Logger log() {
-		return this.plugin.getLogger();
+		return this.plugin.log();
 	}
 
 
