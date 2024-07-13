@@ -35,6 +35,9 @@ public class EcoTickPlugin extends xJavaPlugin {
 				previous.stop();
 			task.start();
 		}
+		// save
+		this.setConfigChanged();
+		this.saveConfigs();
 	}
 
 	@Override
@@ -63,7 +66,6 @@ public class EcoTickPlugin extends xJavaPlugin {
 		this.config.set(cfg);
 		this.configDefaults(cfg);
 		cfg.options().copyDefaults(true);
-		this.saveConfigs();
 	}
 	@Override
 	protected void configDefaults(final FileConfiguration cfg) {
