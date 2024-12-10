@@ -2,8 +2,8 @@ name: ${project.name}
 main: com.poixson.ecotick.EcoTickPlugin
 version: '${project.version}'
 api-version: '${bukkit-short-version}'
-depend:
+depends:
   - pxnPluginLib
-authors: [ lorenzop ]
+authors: lorenzop
 website: ${project.url}
 description: ${project.description}
