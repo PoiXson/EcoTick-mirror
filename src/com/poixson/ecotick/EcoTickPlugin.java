@@ -17,7 +17,7 @@ public class EcoTickPlugin extends xJavaPlugin {
 
 
 	public EcoTickPlugin() {
-		super(EcoTickPlugin.class);
+		super();
 	}
 
 
