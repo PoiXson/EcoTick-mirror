@@ -1,6 +1,12 @@
 EcoTick - Reduce CPU usage when no players are online
 
 
+2024-12-07 - 0.1.14
+===================
+* Spigot 1.21.1 - Java 21
+* last commit with spigot dependencies - switching to paper api
+
+
 2023-02-10 - 0.1.2
 ==================
 * added config.yml with delay seconds
