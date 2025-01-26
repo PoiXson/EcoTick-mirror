@@ -7,7 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import com.poixson.tools.xJavaPlugin;
 
 
-public class EcoTickPlugin extends xJavaPlugin {
+public class EcoTickPlugin extends xJavaPlugin<EcoTickPlugin> {
 	@Override public int getBStatsID() { return 17533; }
 
 	protected static final long DEFAULT_LAG_DELAY = 30L;
